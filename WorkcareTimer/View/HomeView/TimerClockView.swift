@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TimerClockView: View {
+    @Environment(\.modelContext) var modelContext
+    
     @ObservedObject var timerViewModel: TimerViewModel
     @ObservedObject var questViewModel: QuestViewModel
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -25,6 +27,7 @@ struct TimerClockView: View {
                 if timerViewModel.timeRemaining > 0 {
                     timerViewModel.timeRemaining -= 1
                 } else {
+                    modelContext.insert(FlowModel(timerViewModel.currentFlow))
                     timerViewModel.startNextFlow(questViewModel: questViewModel)
                 }
             }

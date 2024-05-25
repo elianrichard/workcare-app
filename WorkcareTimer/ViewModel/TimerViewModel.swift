@@ -59,7 +59,7 @@ import UserNotifications
         self.currentFlowIndex = newIndex
         self.currentFlow = WorkFlowValue().workflows[newIndex].type
         self.timeRemaining = WorkFlowValue().timer[currentFlow] ?? 0
-        self.isPaused = false
+        self.isPaused = true
         withAnimation(.easeInOut(duration: 1)) {
             self.isShowQuest = false
             self.isFlowDone = false

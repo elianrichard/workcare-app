@@ -13,13 +13,9 @@ struct TimerControlView: View {
     var body: some View {
         HStack (spacing: 5) {
             Button {
-                if (timerViewModel.isFlowDone) {
                     timerViewModel.initializeFlow()
-                } else {
-                    timerViewModel.togglePause()                    
-                }
             } label: {
-                Image(systemName: timerViewModel.isPaused ? "play.fill" : "pause.fill")
+                Image(systemName: "backward.fill")
                     .foregroundStyle(.black)
                     .frame(width: 30, height: 30)
                     .background(.white)
@@ -29,12 +25,28 @@ struct TimerControlView: View {
             .focusEffectDisabled()
             
             Button {
-                timerViewModel.resetTimer()
+                if (!timerViewModel.isFlowDone) {
+                    timerViewModel.togglePause()                    
+                }
+            } label: {
+                Image(systemName: timerViewModel.isPaused ? "play.fill" : "pause.fill")
+                    .foregroundStyle(.black)
+                    .frame(width: 30, height: 30)
+                    .background(!timerViewModel.isFlowDone ? .white : .gray)
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
+            }
+            .buttonStyle(PlainButtonStyle())
+            .focusEffectDisabled()
+            
+            Button {
+                if !timerViewModel.isFlowDone {
+                    timerViewModel.resetTimer()
+                }
             } label: {
                 Image(systemName: "arrow.circlepath")
                     .foregroundStyle(.black)
                     .frame(width: 30, height: 30)
-                    .background(.white)
+                    .background(!timerViewModel.isFlowDone ? .white : .gray)
                     .clipShape(RoundedRectangle(cornerRadius: 6))
             }
             .buttonStyle(PlainButtonStyle())

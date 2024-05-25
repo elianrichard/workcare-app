@@ -46,7 +46,6 @@
 		6790576B2BF76458005E05EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6790576A2BF76458005E05EE /* Preview Assets.xcassets */; };
 		67AA85542C018640007FEC90 /* HealthCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA85532C018640007FEC90 /* HealthCategories.swift */; };
 		67AA85562C01E216007FEC90 /* SwiftDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA85552C01E216007FEC90 /* SwiftDataModel.swift */; };
-		67AA855A2C01EC12007FEC90 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA85592C01EC12007FEC90 /* BackgroundView.swift */; };
 		67AA855C2C01EFAE007FEC90 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA855B2C01EFAE007FEC90 /* LayoutView.swift */; };
 		67F102382BFC1E1E00E756E8 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F102372BFC1E1E00E756E8 /* MenuItems.swift */; };
 		67F1023E2BFC24ED00E756E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1023D2BFC24ED00E756E8 /* HomeView.swift */; };
@@ -95,7 +94,6 @@
 		6790576C2BF76458005E05EE /* WorkcareTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkcareTimer.entitlements; sourceTree = "<group>"; };
 		67AA85532C018640007FEC90 /* HealthCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCategories.swift; sourceTree = "<group>"; };
 		67AA85552C01E216007FEC90 /* SwiftDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataModel.swift; sourceTree = "<group>"; };
-		67AA85592C01EC12007FEC90 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		67AA855B2C01EFAE007FEC90 /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
 		67F102372BFC1E1E00E756E8 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		67F1023D2BFC24ED00E756E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				679057652BF76457005E05EE /* ContentView.swift */,
-				67AA85592C01EC12007FEC90 /* BackgroundView.swift */,
 				67AA855B2C01EFAE007FEC90 /* LayoutView.swift */,
 				678B6CD02BFDE84A00E1D47B /* OnboardingView.swift */,
 				671FDB012BFCA0140047B4A2 /* HomeView */,
@@ -365,7 +362,6 @@
 				678B6CCE2BFDE5D000E1D47B /* SettingView.swift in Sources */,
 				674EC39E2BFD8F0000B033B0 /* QuestViewModel.swift in Sources */,
 				67AA85562C01E216007FEC90 /* SwiftDataModel.swift in Sources */,
-				67AA855A2C01EC12007FEC90 /* BackgroundView.swift in Sources */,
 				67AA85542C018640007FEC90 /* HealthCategories.swift in Sources */,
 				678B6CCB2BFDE58000E1D47B /* StatisticView.swift in Sources */,
 				67F102382BFC1E1E00E756E8 /* MenuItems.swift in Sources */,

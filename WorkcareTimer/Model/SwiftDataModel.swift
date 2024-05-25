@@ -13,7 +13,7 @@ class QuestModel: Identifiable {
     var id: UUID
     var questCategory: HealthCategory
     
-    init(questCategory: HealthCategory) {
+    init(_ questCategory: HealthCategory) {
         self.id = UUID()
         self.questCategory = questCategory
     }
@@ -24,7 +24,7 @@ class FlowModel {
     var id: UUID
     var workflow: WorkFlowType
     
-    init(workflow: WorkFlowType) {
+    init(_ workflow: WorkFlowType) {
         self.id = UUID()
         self.workflow = workflow
     }

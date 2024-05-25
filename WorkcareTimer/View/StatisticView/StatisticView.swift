@@ -14,6 +14,7 @@ struct StatisticView: View {
     @Binding var selection: MenuItems
     
     @Query private var allCompletedQuest: [QuestModel]
+    @Query private var allCompletedFlow: [FlowModel]
     
     var questsSum: [HealthCategory: Int] {
         return allCompletedQuest.reduce(into: [:]) { counts, element in
@@ -21,7 +22,14 @@ struct StatisticView: View {
         }
     }
     
+    var flowSum: [WorkFlowType: Int] {
+        return allCompletedFlow.reduce(into: [:]) { counts, element in
+            counts[element.workflow, default: 0] += 1
+        }
+    }
+    
     let columns = [
+        GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
@@ -34,24 +42,41 @@ struct StatisticView: View {
         LayoutView (selection: $selection) {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach (WorkFlowType.allFlows) { flow in
+                        VStack (spacing: 8) {
+                            Text("\(flowSum[flow] ?? 0) ").font(.title)
+                                .fontWeight(.bold)
+                            + Text(WorkFlowType.flowUnit)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                            Text(flow.statisticDescription)
+                                .font(.subheadline)
+                        }
+                    }
                     ForEach (HealthCategory.allCategories) { category in
                         VStack (spacing: 8) {
-                            Text("\((questsSum[category] ?? 0) * category.questValue) \(category.questUnit)")
+                            Text("\((questsSum[category] ?? 0) * category.questValue) ")
                                 .font(.title)
                                 .fontWeight(.bold)
-                            Text(category.recapText)
+                            + Text(category.questUnit)
                                 .font(.title3)
+                                .fontWeight(.bold)
+                            Text(category.recapText)
+                                .font(.subheadline)
                         }
-                        .frame(maxWidth: 500)
-                        .foregroundColor(.white)
                     }
                 }
             }
+            .frame(maxWidth: 800)
             .padding(.vertical)
+            .foregroundColor(.white)
             
             Button {
                 for quest in allCompletedQuest {
                     modelContext.delete(quest)
+                }
+                for flow in allCompletedFlow {
+                    modelContext.delete(flow)
                 }
             } label: {
                 HStack (spacing: 4) {

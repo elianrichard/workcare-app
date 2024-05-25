@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WorkFlowType: Identifiable, Codable {
+enum WorkFlowType: Identifiable, CaseIterable, Hashable, Codable {
     case focus
     case short
     case long
@@ -43,6 +43,18 @@ enum WorkFlowType: Identifiable, Codable {
         case .long: "checkmark.circle.fill"
         }
     }
+    
+    var statisticDescription: String {
+        switch self {
+        case .focus: "of focus period"
+        case .short: "of short break period"
+        case .long: "of long break period"
+        }
+    }
+    
+    static var flowUnit: String = "flows"
+    
+    static var allFlows: [WorkFlowType] = [.focus, .short, .long]
 }
 
 // Need to create new struct because the ID on each array element sould be different

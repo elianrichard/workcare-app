@@ -20,10 +20,10 @@ struct QuestView: View {
             ForEach (HealthCategory.allCategories) { category in
                 Button {
                     if questViewModel.doneQuests[category] ?? false {
-                        let item = questsCompletion.filter { $0.questCategory == category }.last ?? QuestModel(questCategory: .drink)
+                        let item = questsCompletion.filter { $0.questCategory == category }.last ?? QuestModel(.drink)
                         context.delete(item)
                     } else {
-                        context.insert(QuestModel(questCategory: category))
+                        context.insert(QuestModel(category))
                     }
                     questViewModel.modifyCompletion(category)
                 } label: {

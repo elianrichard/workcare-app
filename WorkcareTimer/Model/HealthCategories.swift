@@ -34,9 +34,9 @@ enum HealthCategory: Identifiable, CaseIterable, Hashable, Codable {
     var questUnit: String {
         switch self {
         case .drink: "ml"
-        case .stand: "second(s)"
-        case .walk: "step(s)"
-        case .breath: "second(s)"
+        case .stand: "s"
+        case .walk: "steps"
+        case .breath: "s"
         }
     }
     
@@ -59,9 +59,4 @@ enum HealthCategory: Identifiable, CaseIterable, Hashable, Codable {
     }
     
     static var allCategories: [HealthCategory] = [.drink, .stand, .walk, .breath]
-    
-    
-    static func < (lhs: HealthCategory, rhs: HealthCategory) -> Bool {
-        lhs.id < rhs.id
-    }
 }
