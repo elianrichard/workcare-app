@@ -7,19 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6714145A2BFC167800EC3A57 /* Articulat CF Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414462BFC167700EC3A57 /* Articulat CF Regular.ttf */; };
+		6714145B2BFC167800EC3A57 /* Articulat CF Demi Bold Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414472BFC167700EC3A57 /* Articulat CF Demi Bold Oblique.ttf */; };
+		6714145C2BFC167800EC3A57 /* Articulat CF Light Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414482BFC167700EC3A57 /* Articulat CF Light Oblique.ttf */; };
+		6714145D2BFC167800EC3A57 /* Articulat CF Extra Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414492BFC167700EC3A57 /* Articulat CF Extra Bold.ttf */; };
+		6714145E2BFC167800EC3A57 /* Articulat CF Bold Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6714144A2BFC167700EC3A57 /* Articulat CF Bold Oblique.ttf */; };
+		6714145F2BFC167800EC3A57 /* Articulat CF Medium Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6714144B2BFC167700EC3A57 /* Articulat CF Medium Oblique.ttf */; };
+		671414602BFC167800EC3A57 /* Articulat CF Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6714144C2BFC167700EC3A57 /* Articulat CF Medium.ttf */; };
+		671414612BFC167800EC3A57 /* Articulat CF Extra Bold Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6714144D2BFC167700EC3A57 /* Articulat CF Extra Bold Oblique.ttf */; };
+		671414622BFC167800EC3A57 /* Articulat CF Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6714144E2BFC167700EC3A57 /* Articulat CF Oblique.ttf */; };
+		671414632BFC167800EC3A57 /* Articulat CF Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6714144F2BFC167700EC3A57 /* Articulat CF Heavy.ttf */; };
+		671414642BFC167800EC3A57 /* Articulat CF Regular Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414502BFC167700EC3A57 /* Articulat CF Regular Oblique.ttf */; };
+		671414652BFC167800EC3A57 /* Articulat CF Thin Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414512BFC167700EC3A57 /* Articulat CF Thin Oblique.ttf */; };
+		671414662BFC167800EC3A57 /* Articulat CF Heavy Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414522BFC167700EC3A57 /* Articulat CF Heavy Oblique.ttf */; };
+		671414672BFC167800EC3A57 /* Articulat CF Demi Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414532BFC167700EC3A57 /* Articulat CF Demi Bold.ttf */; };
+		671414682BFC167800EC3A57 /* Articulat CF Extra Light Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414542BFC167700EC3A57 /* Articulat CF Extra Light Oblique.ttf */; };
+		671414692BFC167800EC3A57 /* Articulat CF Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414552BFC167800EC3A57 /* Articulat CF Bold.ttf */; };
+		6714146A2BFC167800EC3A57 /* Articulat CF Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414562BFC167800EC3A57 /* Articulat CF Normal.ttf */; };
+		6714146B2BFC167800EC3A57 /* Articulat CF Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414572BFC167800EC3A57 /* Articulat CF Light.ttf */; };
+		6714146C2BFC167800EC3A57 /* Articulat CF Extra Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414582BFC167800EC3A57 /* Articulat CF Extra Light.ttf */; };
+		6714146D2BFC167800EC3A57 /* Articulat CF Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414592BFC167800EC3A57 /* Articulat CF Thin.ttf */; };
+		671FDAF82BFC80050047B4A2 /* TimerClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDAF72BFC80050047B4A2 /* TimerClockView.swift */; };
+		671FDAFE2BFC92A90047B4A2 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDAFD2BFC92A90047B4A2 /* TimerViewModel.swift */; };
+		671FDB002BFC94CA0047B4A2 /* WorkFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDAFF2BFC94CA0047B4A2 /* WorkFlow.swift */; };
+		671FDB032BFCA0210047B4A2 /* TimerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDB022BFCA0210047B4A2 /* TimerControlView.swift */; };
+		671FDB052BFCA3880047B4A2 /* TimerCheckpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDB042BFCA3880047B4A2 /* TimerCheckpointView.swift */; };
+		67376AD42BFD7D3A00BE17D6 /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67376AD32BFD7D3A00BE17D6 /* QuestView.swift */; };
+		674EC39E2BFD8F0000B033B0 /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EC39D2BFD8F0000B033B0 /* QuestViewModel.swift */; };
+		674EC3A02BFDD86500B033B0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EC39F2BFDD86500B033B0 /* HeaderView.swift */; };
+		678B6CC82BFDE53A00E1D47B /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CC72BFDE53A00E1D47B /* AchievementView.swift */; };
+		678B6CCB2BFDE58000E1D47B /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CCA2BFDE58000E1D47B /* StatisticView.swift */; };
+		678B6CCE2BFDE5D000E1D47B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CCD2BFDE5D000E1D47B /* SettingView.swift */; };
+		678B6CD12BFDE84A00E1D47B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CD02BFDE84A00E1D47B /* OnboardingView.swift */; };
 		679057642BF76457005E05EE /* WorkcareTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679057632BF76457005E05EE /* WorkcareTimerApp.swift */; };
 		679057662BF76457005E05EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679057652BF76457005E05EE /* ContentView.swift */; };
 		679057682BF76458005E05EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 679057672BF76458005E05EE /* Assets.xcassets */; };
 		6790576B2BF76458005E05EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6790576A2BF76458005E05EE /* Preview Assets.xcassets */; };
+		67F102382BFC1E1E00E756E8 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F102372BFC1E1E00E756E8 /* MenuItems.swift */; };
+		67F1023E2BFC24ED00E756E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1023D2BFC24ED00E756E8 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		671414452BFC13FC00EC3A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		671414462BFC167700EC3A57 /* Articulat CF Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Regular.ttf"; sourceTree = "<group>"; };
+		671414472BFC167700EC3A57 /* Articulat CF Demi Bold Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Demi Bold Oblique.ttf"; sourceTree = "<group>"; };
+		671414482BFC167700EC3A57 /* Articulat CF Light Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Light Oblique.ttf"; sourceTree = "<group>"; };
+		671414492BFC167700EC3A57 /* Articulat CF Extra Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Extra Bold.ttf"; sourceTree = "<group>"; };
+		6714144A2BFC167700EC3A57 /* Articulat CF Bold Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Bold Oblique.ttf"; sourceTree = "<group>"; };
+		6714144B2BFC167700EC3A57 /* Articulat CF Medium Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Medium Oblique.ttf"; sourceTree = "<group>"; };
+		6714144C2BFC167700EC3A57 /* Articulat CF Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Medium.ttf"; sourceTree = "<group>"; };
+		6714144D2BFC167700EC3A57 /* Articulat CF Extra Bold Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Extra Bold Oblique.ttf"; sourceTree = "<group>"; };
+		6714144E2BFC167700EC3A57 /* Articulat CF Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Oblique.ttf"; sourceTree = "<group>"; };
+		6714144F2BFC167700EC3A57 /* Articulat CF Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Heavy.ttf"; sourceTree = "<group>"; };
+		671414502BFC167700EC3A57 /* Articulat CF Regular Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Regular Oblique.ttf"; sourceTree = "<group>"; };
+		671414512BFC167700EC3A57 /* Articulat CF Thin Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Thin Oblique.ttf"; sourceTree = "<group>"; };
+		671414522BFC167700EC3A57 /* Articulat CF Heavy Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Heavy Oblique.ttf"; sourceTree = "<group>"; };
+		671414532BFC167700EC3A57 /* Articulat CF Demi Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Demi Bold.ttf"; sourceTree = "<group>"; };
+		671414542BFC167700EC3A57 /* Articulat CF Extra Light Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Extra Light Oblique.ttf"; sourceTree = "<group>"; };
+		671414552BFC167800EC3A57 /* Articulat CF Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Bold.ttf"; sourceTree = "<group>"; };
+		671414562BFC167800EC3A57 /* Articulat CF Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Normal.ttf"; sourceTree = "<group>"; };
+		671414572BFC167800EC3A57 /* Articulat CF Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Light.ttf"; sourceTree = "<group>"; };
+		671414582BFC167800EC3A57 /* Articulat CF Extra Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Extra Light.ttf"; sourceTree = "<group>"; };
+		671414592BFC167800EC3A57 /* Articulat CF Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Thin.ttf"; sourceTree = "<group>"; };
+		671FDAF72BFC80050047B4A2 /* TimerClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerClockView.swift; sourceTree = "<group>"; };
+		671FDAFD2BFC92A90047B4A2 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		671FDAFF2BFC94CA0047B4A2 /* WorkFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkFlow.swift; sourceTree = "<group>"; };
+		671FDB022BFCA0210047B4A2 /* TimerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControlView.swift; sourceTree = "<group>"; };
+		671FDB042BFCA3880047B4A2 /* TimerCheckpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCheckpointView.swift; sourceTree = "<group>"; };
+		67376AD32BFD7D3A00BE17D6 /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
+		674EC39D2BFD8F0000B033B0 /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
+		674EC39F2BFDD86500B033B0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		678B6CC72BFDE53A00E1D47B /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		678B6CCA2BFDE58000E1D47B /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		678B6CCD2BFDE5D000E1D47B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		678B6CD02BFDE84A00E1D47B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		679057602BF76457005E05EE /* WorkcareTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkcareTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		679057632BF76457005E05EE /* WorkcareTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkcareTimerApp.swift; sourceTree = "<group>"; };
 		679057652BF76457005E05EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		679057672BF76458005E05EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6790576A2BF76458005E05EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6790576C2BF76458005E05EE /* WorkcareTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkcareTimer.entitlements; sourceTree = "<group>"; };
+		67F102372BFC1E1E00E756E8 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		67F1023D2BFC24ED00E756E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +102,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6714142F2BFC11CE00EC3A57 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				671414302BFC11D400EC3A57 /* Font */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		671414302BFC11D400EC3A57 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6714144A2BFC167700EC3A57 /* Articulat CF Bold Oblique.ttf */,
+				671414552BFC167800EC3A57 /* Articulat CF Bold.ttf */,
+				671414472BFC167700EC3A57 /* Articulat CF Demi Bold Oblique.ttf */,
+				671414532BFC167700EC3A57 /* Articulat CF Demi Bold.ttf */,
+				6714144D2BFC167700EC3A57 /* Articulat CF Extra Bold Oblique.ttf */,
+				671414492BFC167700EC3A57 /* Articulat CF Extra Bold.ttf */,
+				671414542BFC167700EC3A57 /* Articulat CF Extra Light Oblique.ttf */,
+				671414582BFC167800EC3A57 /* Articulat CF Extra Light.ttf */,
+				671414522BFC167700EC3A57 /* Articulat CF Heavy Oblique.ttf */,
+				6714144F2BFC167700EC3A57 /* Articulat CF Heavy.ttf */,
+				671414482BFC167700EC3A57 /* Articulat CF Light Oblique.ttf */,
+				671414572BFC167800EC3A57 /* Articulat CF Light.ttf */,
+				6714144B2BFC167700EC3A57 /* Articulat CF Medium Oblique.ttf */,
+				6714144C2BFC167700EC3A57 /* Articulat CF Medium.ttf */,
+				671414562BFC167800EC3A57 /* Articulat CF Normal.ttf */,
+				6714144E2BFC167700EC3A57 /* Articulat CF Oblique.ttf */,
+				671414502BFC167700EC3A57 /* Articulat CF Regular Oblique.ttf */,
+				671414462BFC167700EC3A57 /* Articulat CF Regular.ttf */,
+				671414512BFC167700EC3A57 /* Articulat CF Thin Oblique.ttf */,
+				671414592BFC167800EC3A57 /* Articulat CF Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		671414B42BFC19AD00EC3A57 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				671FDAFD2BFC92A90047B4A2 /* TimerViewModel.swift */,
+				674EC39D2BFD8F0000B033B0 /* QuestViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		671FDB012BFCA0140047B4A2 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				67F1023D2BFC24ED00E756E8 /* HomeView.swift */,
+				674EC39F2BFDD86500B033B0 /* HeaderView.swift */,
+				671FDAF72BFC80050047B4A2 /* TimerClockView.swift */,
+				67376AD32BFD7D3A00BE17D6 /* QuestView.swift */,
+				671FDB022BFCA0210047B4A2 /* TimerControlView.swift */,
+				671FDB042BFCA3880047B4A2 /* TimerCheckpointView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		678B6CC62BFDE51700E1D47B /* AchievementView */ = {
+			isa = PBXGroup;
+			children = (
+				678B6CC72BFDE53A00E1D47B /* AchievementView.swift */,
+			);
+			path = AchievementView;
+			sourceTree = "<group>";
+		};
+		678B6CC92BFDE56900E1D47B /* StatisticView */ = {
+			isa = PBXGroup;
+			children = (
+				678B6CCA2BFDE58000E1D47B /* StatisticView.swift */,
+			);
+			path = StatisticView;
+			sourceTree = "<group>";
+		};
+		678B6CCC2BFDE5C300E1D47B /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				678B6CCD2BFDE5D000E1D47B /* SettingView.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
 		679057572BF76457005E05EE = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +203,11 @@
 			isa = PBXGroup;
 			children = (
 				679057632BF76457005E05EE /* WorkcareTimerApp.swift */,
-				679057652BF76457005E05EE /* ContentView.swift */,
+				671414452BFC13FC00EC3A57 /* Info.plist */,
+				6714142F2BFC11CE00EC3A57 /* Shared */,
+				671414B42BFC19AD00EC3A57 /* ViewModel */,
+				67F102392BFC1E4C00E756E8 /* Model */,
+				67F1023C2BFC24DB00E756E8 /* View */,
 				679057672BF76458005E05EE /* Assets.xcassets */,
 				6790576C2BF76458005E05EE /* WorkcareTimer.entitlements */,
 				679057692BF76458005E05EE /* Preview Content */,
@@ -67,6 +221,28 @@
 				6790576A2BF76458005E05EE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		67F102392BFC1E4C00E756E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				67F102372BFC1E1E00E756E8 /* MenuItems.swift */,
+				671FDAFF2BFC94CA0047B4A2 /* WorkFlow.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		67F1023C2BFC24DB00E756E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				679057652BF76457005E05EE /* ContentView.swift */,
+				678B6CD02BFDE84A00E1D47B /* OnboardingView.swift */,
+				671FDB012BFCA0140047B4A2 /* HomeView */,
+				678B6CC62BFDE51700E1D47B /* AchievementView */,
+				678B6CC92BFDE56900E1D47B /* StatisticView */,
+				678B6CCC2BFDE5C300E1D47B /* SettingView */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,8 +303,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6714145D2BFC167800EC3A57 /* Articulat CF Extra Bold.ttf in Resources */,
+				671414602BFC167800EC3A57 /* Articulat CF Medium.ttf in Resources */,
+				6714146D2BFC167800EC3A57 /* Articulat CF Thin.ttf in Resources */,
+				671414662BFC167800EC3A57 /* Articulat CF Heavy Oblique.ttf in Resources */,
+				671414682BFC167800EC3A57 /* Articulat CF Extra Light Oblique.ttf in Resources */,
+				6714145E2BFC167800EC3A57 /* Articulat CF Bold Oblique.ttf in Resources */,
 				6790576B2BF76458005E05EE /* Preview Assets.xcassets in Resources */,
+				6714146C2BFC167800EC3A57 /* Articulat CF Extra Light.ttf in Resources */,
+				6714145B2BFC167800EC3A57 /* Articulat CF Demi Bold Oblique.ttf in Resources */,
+				671414632BFC167800EC3A57 /* Articulat CF Heavy.ttf in Resources */,
+				6714145C2BFC167800EC3A57 /* Articulat CF Light Oblique.ttf in Resources */,
+				6714146A2BFC167800EC3A57 /* Articulat CF Normal.ttf in Resources */,
+				671414672BFC167800EC3A57 /* Articulat CF Demi Bold.ttf in Resources */,
+				6714145A2BFC167800EC3A57 /* Articulat CF Regular.ttf in Resources */,
+				6714146B2BFC167800EC3A57 /* Articulat CF Light.ttf in Resources */,
 				679057682BF76458005E05EE /* Assets.xcassets in Resources */,
+				671414692BFC167800EC3A57 /* Articulat CF Bold.ttf in Resources */,
+				6714145F2BFC167800EC3A57 /* Articulat CF Medium Oblique.ttf in Resources */,
+				671414622BFC167800EC3A57 /* Articulat CF Oblique.ttf in Resources */,
+				671414652BFC167800EC3A57 /* Articulat CF Thin Oblique.ttf in Resources */,
+				671414612BFC167800EC3A57 /* Articulat CF Extra Bold Oblique.ttf in Resources */,
+				671414642BFC167800EC3A57 /* Articulat CF Regular Oblique.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +335,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F1023E2BFC24ED00E756E8 /* HomeView.swift in Sources */,
+				671FDAFE2BFC92A90047B4A2 /* TimerViewModel.swift in Sources */,
+				671FDAF82BFC80050047B4A2 /* TimerClockView.swift in Sources */,
 				679057662BF76457005E05EE /* ContentView.swift in Sources */,
+				671FDB052BFCA3880047B4A2 /* TimerCheckpointView.swift in Sources */,
+				671FDB002BFC94CA0047B4A2 /* WorkFlow.swift in Sources */,
+				678B6CCE2BFDE5D000E1D47B /* SettingView.swift in Sources */,
+				674EC39E2BFD8F0000B033B0 /* QuestViewModel.swift in Sources */,
+				678B6CCB2BFDE58000E1D47B /* StatisticView.swift in Sources */,
+				67F102382BFC1E1E00E756E8 /* MenuItems.swift in Sources */,
 				679057642BF76457005E05EE /* WorkcareTimerApp.swift in Sources */,
+				678B6CC82BFDE53A00E1D47B /* AchievementView.swift in Sources */,
+				671FDB032BFCA0210047B4A2 /* TimerControlView.swift in Sources */,
+				678B6CD12BFDE84A00E1D47B /* OnboardingView.swift in Sources */,
+				67376AD42BFD7D3A00BE17D6 /* QuestView.swift in Sources */,
+				674EC3A02BFDD86500B033B0 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +489,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = WorkcareTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -287,6 +497,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = elian.app.WorkcareTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -306,7 +518,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = WorkcareTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -314,6 +526,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = elian.app.WorkcareTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
