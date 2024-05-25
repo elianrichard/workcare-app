@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct WorkcareTimerApp: App {
@@ -15,6 +16,7 @@ struct WorkcareTimerApp: App {
                 .frame(minWidth: 800, idealWidth: 800, maxWidth: .infinity, minHeight: 500, idealHeight: 500, maxHeight: .infinity)
         }
         .windowStyle(.hiddenTitleBar)
+        .modelContainer(for: [FlowModel.self, QuestModel.self])
     }
 }
 

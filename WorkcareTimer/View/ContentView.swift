@@ -9,14 +9,16 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
-    @State var isOnboardingDone = false
-    @State var selection = MenuItems.home
+    @StateObject var timerViewModel = TimerViewModel()
+    @StateObject var questViewModel = QuestViewModel()
+    @State public var isOnboardingDone = false
+    @State public var selection = MenuItems.home
     
     var body: some View {
         if (isOnboardingDone) {
             switch selection {
             case .home:
-                HomeView(selection: $selection)
+                HomeView(timerViewModel: timerViewModel, questViewModel: questViewModel, selection: $selection)
             case .achievement:
                 AchievementView(selection: $selection)
             case .statistic:

@@ -11,13 +11,9 @@ struct AchievementView: View {
     @Binding var selection: MenuItems
     
     var body: some View {
-        VStack {
-            Text("Achievement")
-            Button {
-                selection = .home
-            } label: {
-                Text("Back to Home")
-            }
+        LayoutView(selection: $selection) {
+            Text("Hello")
+            Spacer()
         }
     }
 }

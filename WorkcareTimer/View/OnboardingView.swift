@@ -9,7 +9,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct OnboardingView: View {
-    @Binding var isOnboardingDone: Bool
+    @Binding public var isOnboardingDone: Bool
     
     var body: some View {
         GeometryReader { geometry in

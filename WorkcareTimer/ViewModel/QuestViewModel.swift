@@ -6,52 +6,42 @@
 //
 
 import Foundation
-
-enum HealthCategory {
-    case drink
-    case stand
-    case walk
-    case breathIn
-    case breathOut
-}
-
-struct QuestModel: Identifiable {
-    var id: UUID = UUID()
-    var questTitle: String
-    var category: HealthCategory
-    var value: Int
-}
+import SwiftData
 
 @Observable class QuestViewModel: ObservableObject {
-    var quests: [QuestModel] = [
-        QuestModel(questTitle: "Drink 300 ml of water", category: .drink, value: 300),
-        QuestModel(questTitle: "Stand up & stretch for 60 seconds", category: .stand, value: 60),
-        QuestModel(questTitle: "Walk 20 steps", category: .drink, value: 20),
-        QuestModel(questTitle: "Take a deep breath for 5 seconds", category: .breathIn, value: 5),
-        QuestModel(questTitle: "Exhale breath for 5 seconds", category: .breathOut, value: 5),
-    ]
-    var doneQuestIndex: [Int] = []
+    var doneQuests: [HealthCategory: Bool] = [.drink: false, .stand: false, .walk: false, .breath: false]
     
-    var totalCompletion: [HealthCategory: [Int]] = [.drink: [], .stand: [], .walk: [], .breathIn: [], .breathOut: []]
+    var totalLifetimeCompletion: [HealthCategory: Int] = [.drink: 0, .stand: 0, .walk: 0, .breath: 0]
     
-    func addCompletion (_ completedQuest: QuestModel) {
-        if var currentCompletion = totalCompletion[completedQuest.category] {
-            print(currentCompletion, completedQuest.category)
-            currentCompletion.append(completedQuest.value)
-            print(currentCompletion)
-            totalCompletion[completedQuest.category] = currentCompletion
-        }
-    }
+    var totalFlowCompletion: [HealthCategory: [Int]] = [.drink: [], .stand: [], .walk: [], .breath: []]
     
-    func removeCompletion (_ completedQuest: QuestModel) {
-        if var currentCompletion = totalCompletion[completedQuest.category] {
-            currentCompletion.popLast()
-            totalCompletion[completedQuest.category] = currentCompletion
+    func modifyCompletion (_ completedCategory: HealthCategory) {
+        if var currentCompletion = self.totalFlowCompletion[completedCategory],
+           var lifetimeCompletion = self.totalLifetimeCompletion[completedCategory] {
+            if (doneQuests[completedCategory] ?? false) {
+                _ = currentCompletion.popLast()
+                lifetimeCompletion -= completedCategory.questValue
+                self.doneQuests[completedCategory] = false
+                self.totalFlowCompletion[completedCategory] = currentCompletion
+                self.totalLifetimeCompletion[completedCategory] = lifetimeCompletion
+            } else {
+                currentCompletion.append(completedCategory.questValue)
+                lifetimeCompletion += completedCategory.questValue
+                self.doneQuests[completedCategory] = true
+                self.totalFlowCompletion[completedCategory] = currentCompletion
+                self.totalLifetimeCompletion[completedCategory] = lifetimeCompletion
+            }
         }
     }
     
     func resetDoneQuestIndex () {
-        self.doneQuestIndex = []
+        self.doneQuests = [.drink: false, .stand: false, .walk: false, .breath: false]
+        self.totalFlowCompletion = [.drink: [], .stand: [], .walk: [], .breath: []]
+    }
+    
+    func getRecapValue (_ category: HealthCategory) -> Int {
+        let categoryRecap = totalFlowCompletion[category] ?? []
+        return categoryRecap.reduce(0, +)
     }
 }
 

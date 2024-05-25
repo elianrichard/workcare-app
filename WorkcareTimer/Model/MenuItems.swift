@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum MenuItems: Identifiable, CaseIterable, Hashable {
     case home
@@ -31,11 +32,11 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
         case .home:
             "Home"
         case .achievement:
-            "Achievement"
+            "Achievements"
         case .statistic:
-            "Statistic"
+            "Statistics"
         case .setting:
-            "Setting"
+            "Settings"
         }
     }
     
@@ -65,13 +66,32 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
         }
     }
     
+    var bgImage: ImageResource {
+        switch self {
+        case .home:
+                .homeBg
+        case .achievement:
+                .achievementBg
+        case .statistic:
+                .statisticBg
+        case .setting:
+                .homeBg
+        }
+    }
+
     static var allCases: [MenuItems] {
         [.home, .achievement, .statistic, .setting]
     }
-    
+
     //    This == func will override the == operator when handling or comparing TaskSection obj struct,
     //    so it will compore the id instead of the struct itself
     static func == (lhs: MenuItems, rhs: MenuItems) -> Bool {
         lhs.id == rhs.id
+    }
+    static func < (lhs: MenuItems, rhs: MenuItems) -> Bool {
+        lhs.id < rhs.id
+    }
+    static func > (lhs: MenuItems, rhs: MenuItems) -> Bool {
+        lhs.id > rhs.id
     }
 }

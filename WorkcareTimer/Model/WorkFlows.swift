@@ -7,10 +7,18 @@
 
 import Foundation
 
-enum WorkFlowType {
+enum WorkFlowType: Identifiable, Codable {
     case focus
     case short
     case long
+    
+    var id: String {
+        switch self {
+        case .focus: "focus"
+        case .short: "short"
+        case .long: "long"
+        }
+    }
     
     var initialIcon: String {
         switch self {

@@ -6,27 +6,30 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct QuestView: View {
+    @Environment(\.modelContext) private var context
+    
     @ObservedObject var questViewModel: QuestViewModel
+    
+    @Query var questsCompletion: [QuestModel]
     
     var body: some View {
         VStack (spacing: 10) {
-            ForEach (Array(questViewModel.quests.enumerated()), id: \.element.id) { index, quest in
+            ForEach (HealthCategory.allCategories) { category in
                 Button {
-                    if (questViewModel.doneQuestIndex.contains(index)) {
-                        if let arrIndex = questViewModel.doneQuestIndex.firstIndex(of: index) {
-                            questViewModel.doneQuestIndex.remove(at: arrIndex)
-                            questViewModel.removeCompletion(quest)
-                        }
+                    if questViewModel.doneQuests[category] ?? false {
+                        let item = questsCompletion.filter { $0.questCategory == category }.last ?? QuestModel(questCategory: .drink)
+                        context.delete(item)
                     } else {
-                        questViewModel.doneQuestIndex.append(index)
-                        questViewModel.addCompletion(quest)
+                        context.insert(QuestModel(questCategory: category))
                     }
+                    questViewModel.modifyCompletion(category)
                 } label: {
                     HStack (alignment: .top) {
-                        Image(systemName: questViewModel.doneQuestIndex.contains(index) ? "checkmark.circle.fill" : "circle")
-                        Text(quest.questTitle)
+                        Image(systemName: questViewModel.doneQuests[category] ?? false ? "checkmark.circle.fill" : "circle")
+                        Text(category.questText)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }

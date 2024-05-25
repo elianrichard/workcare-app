@@ -9,13 +9,16 @@ import SwiftUI
 
 struct HeaderView: View {
     @Binding var selection: MenuItems
+    var isShowQuotes: Bool = false
     
     var body: some View {
         HStack (alignment: .top) {
             HStack (spacing: 5) {
                 ForEach (MenuItems.allCases) { menu in
                     Button {
-                        selection = menu
+                        withAnimation {
+                            selection = menu
+                        }
                     } label: {
                         Image(systemName: menu.iconName)
                             .resizable()
@@ -31,9 +34,17 @@ struct HeaderView: View {
                 }
             }
             Spacer()
-            Text("“Lost time is never found again.”\n– Benjamin Franklin")
-                .font(.title3)
-                .multilineTextAlignment(.trailing)
+            if isShowQuotes {
+                Text("“Lost time is never found again.”\n– Benjamin Franklin")
+                    .font(.title3)
+                    .multilineTextAlignment(.trailing)
+                    .foregroundStyle(.white)
+            } else {
+                Text(selection.displayName)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+            }
         }
     }
 }
