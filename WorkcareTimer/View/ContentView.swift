@@ -23,8 +23,6 @@ struct ContentView: View {
                 AchievementView(selection: $selection)
             case .statistic:
                 StatisticView(selection: $selection)
-            case .setting:
-                SettingView(selection: $selection)
             }
         } else {
             OnboardingView(isOnboardingDone: $isOnboardingDone)

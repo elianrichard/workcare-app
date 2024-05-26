@@ -28,6 +28,7 @@
 		6714146C2BFC167800EC3A57 /* Articulat CF Extra Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414582BFC167800EC3A57 /* Articulat CF Extra Light.ttf */; };
 		6714146D2BFC167800EC3A57 /* Articulat CF Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 671414592BFC167800EC3A57 /* Articulat CF Thin.ttf */; };
 		6714D0B62C017558001A8631 /* RecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6714D0B52C017558001A8631 /* RecapView.swift */; };
+		671ED88C2C02C449009C0FB4 /* AchievementItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671ED88B2C02C449009C0FB4 /* AchievementItems.swift */; };
 		671FDAF82BFC80050047B4A2 /* TimerClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDAF72BFC80050047B4A2 /* TimerClockView.swift */; };
 		671FDAFE2BFC92A90047B4A2 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDAFD2BFC92A90047B4A2 /* TimerViewModel.swift */; };
 		671FDB002BFC94CA0047B4A2 /* WorkFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDAFF2BFC94CA0047B4A2 /* WorkFlows.swift */; };
@@ -38,7 +39,6 @@
 		674EC3A02BFDD86500B033B0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EC39F2BFDD86500B033B0 /* HeaderView.swift */; };
 		678B6CC82BFDE53A00E1D47B /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CC72BFDE53A00E1D47B /* AchievementView.swift */; };
 		678B6CCB2BFDE58000E1D47B /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CCA2BFDE58000E1D47B /* StatisticView.swift */; };
-		678B6CCE2BFDE5D000E1D47B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CCD2BFDE5D000E1D47B /* SettingView.swift */; };
 		678B6CD12BFDE84A00E1D47B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678B6CD02BFDE84A00E1D47B /* OnboardingView.swift */; };
 		679057642BF76457005E05EE /* WorkcareTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679057632BF76457005E05EE /* WorkcareTimerApp.swift */; };
 		679057662BF76457005E05EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679057652BF76457005E05EE /* ContentView.swift */; };
@@ -74,6 +74,7 @@
 		671414582BFC167800EC3A57 /* Articulat CF Extra Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Extra Light.ttf"; sourceTree = "<group>"; };
 		671414592BFC167800EC3A57 /* Articulat CF Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Articulat CF Thin.ttf"; sourceTree = "<group>"; };
 		6714D0B52C017558001A8631 /* RecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapView.swift; sourceTree = "<group>"; };
+		671ED88B2C02C449009C0FB4 /* AchievementItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementItems.swift; sourceTree = "<group>"; };
 		671FDAF72BFC80050047B4A2 /* TimerClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerClockView.swift; sourceTree = "<group>"; };
 		671FDAFD2BFC92A90047B4A2 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		671FDAFF2BFC94CA0047B4A2 /* WorkFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkFlows.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		674EC39F2BFDD86500B033B0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		678B6CC72BFDE53A00E1D47B /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		678B6CCA2BFDE58000E1D47B /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
-		678B6CCD2BFDE5D000E1D47B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		678B6CD02BFDE84A00E1D47B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		679057602BF76457005E05EE /* WorkcareTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkcareTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		679057632BF76457005E05EE /* WorkcareTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkcareTimerApp.swift; sourceTree = "<group>"; };
@@ -184,14 +184,6 @@
 			path = StatisticView;
 			sourceTree = "<group>";
 		};
-		678B6CCC2BFDE5C300E1D47B /* SettingView */ = {
-			isa = PBXGroup;
-			children = (
-				678B6CCD2BFDE5D000E1D47B /* SettingView.swift */,
-			);
-			path = SettingView;
-			sourceTree = "<group>";
-		};
 		679057572BF76457005E05EE = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +230,7 @@
 				67F102372BFC1E1E00E756E8 /* MenuItems.swift */,
 				671FDAFF2BFC94CA0047B4A2 /* WorkFlows.swift */,
 				67AA85532C018640007FEC90 /* HealthCategories.swift */,
+				671ED88B2C02C449009C0FB4 /* AchievementItems.swift */,
 				67AA85552C01E216007FEC90 /* SwiftDataModel.swift */,
 			);
 			path = Model;
@@ -252,7 +245,6 @@
 				671FDB012BFCA0140047B4A2 /* HomeView */,
 				678B6CC62BFDE51700E1D47B /* AchievementView */,
 				678B6CC92BFDE56900E1D47B /* StatisticView */,
-				678B6CCC2BFDE5C300E1D47B /* SettingView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,10 +351,10 @@
 				67AA855C2C01EFAE007FEC90 /* LayoutView.swift in Sources */,
 				671FDB052BFCA3880047B4A2 /* TimerCheckpointView.swift in Sources */,
 				671FDB002BFC94CA0047B4A2 /* WorkFlows.swift in Sources */,
-				678B6CCE2BFDE5D000E1D47B /* SettingView.swift in Sources */,
 				674EC39E2BFD8F0000B033B0 /* QuestViewModel.swift in Sources */,
 				67AA85562C01E216007FEC90 /* SwiftDataModel.swift in Sources */,
 				67AA85542C018640007FEC90 /* HealthCategories.swift in Sources */,
+				671ED88C2C02C449009C0FB4 /* AchievementItems.swift in Sources */,
 				678B6CCB2BFDE58000E1D47B /* StatisticView.swift in Sources */,
 				67F102382BFC1E1E00E756E8 /* MenuItems.swift in Sources */,
 				679057642BF76457005E05EE /* WorkcareTimerApp.swift in Sources */,

@@ -42,9 +42,20 @@ struct StatisticView: View {
         LayoutView (selection: $selection) {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
+                    VStack (spacing: 8) {
+                        Text("\(allCompletedFlow.count) ")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        + Text(WorkFlowType.flowUnit)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                        Text("of all flow period in total")
+                            .font(.subheadline)
+                    }
                     ForEach (WorkFlowType.allFlows) { flow in
                         VStack (spacing: 8) {
-                            Text("\(flowSum[flow] ?? 0) ").font(.title)
+                            Text("\(flowSum[flow] ?? 0) ")
+                                .font(.title)
                                 .fontWeight(.bold)
                             + Text(WorkFlowType.flowUnit)
                                 .font(.title3)
@@ -55,7 +66,7 @@ struct StatisticView: View {
                     }
                     ForEach (HealthCategory.allCategories) { category in
                         VStack (spacing: 8) {
-                            Text("\((questsSum[category] ?? 0) * category.questValue) ")
+                            Text("\(getHealthCategoryValue(category)) ")
                                 .font(.title)
                                 .fontWeight(.bold)
                             + Text(category.questUnit)
@@ -90,6 +101,16 @@ struct StatisticView: View {
             }
             .buttonStyle(PlainButtonStyle())
             .frame(maxWidth: .infinity, alignment: .trailing)
+        }
+    }
+    
+    func getHealthCategoryValue (_ category: HealthCategory) -> String {
+        let value =  Double(questsSum[category] ?? 0) * Double(category.questValue)
+        if category.questUnitDivider != 1 {
+            let unitConversion = value / Double(category.questUnitDivider)
+            return String(format: "%.1f", unitConversion)
+        } else {
+            return String(format: "%.0f", value)
         }
     }
 }

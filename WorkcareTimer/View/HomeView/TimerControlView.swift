@@ -9,11 +9,12 @@ import SwiftUI
 
 struct TimerControlView: View {
     @ObservedObject var timerViewModel: TimerViewModel
+    @ObservedObject var questViewModel: QuestViewModel
     
     var body: some View {
         HStack (spacing: 5) {
             Button {
-                    timerViewModel.initializeFlow()
+                timerViewModel.initializeFlow(questViewModel: questViewModel)
             } label: {
                 Image(systemName: "backward.fill")
                     .foregroundStyle(.black)
@@ -56,5 +57,5 @@ struct TimerControlView: View {
 }
 
 #Preview {
-    TimerControlView(timerViewModel: TimerViewModel())
+    TimerControlView(timerViewModel: TimerViewModel(), questViewModel: QuestViewModel())
 }

@@ -11,41 +11,50 @@ enum HealthCategory: Identifiable, CaseIterable, Hashable, Codable {
     case drink
     case stand
     case walk
-    case breath
+    case breathe
     
     var id: String {
         switch self {
         case .drink: "drink"
         case .stand: "stand"
         case .walk: "walk"
-        case .breath: "breath"
+        case .breathe: "breathe"
         }
     }
     
     var questText: String {
         switch self {
-        case .drink: "Drink 300 ml of water"
+        case .drink: "Drink 300 mL of water"
         case .stand: "Stand up & stretch for 60 seconds"
         case .walk: "Walk 20 steps"
-        case .breath: "Inhale and Exhale breath for 10 seconds"
+        case .breathe: "Inhale and Exhale breath for 10 seconds"
         }
     }
     
     var questUnit: String {
         switch self {
-        case .drink: "ml"
+        case .drink: "L"
         case .stand: "s"
         case .walk: "steps"
-        case .breath: "s"
+        case .breathe: "s"
+        }
+    }
+    
+    var questUnitDivider: Int {
+        switch self {
+        case .drink: 1000
+        case .stand: 1
+        case .walk: 1
+        case .breathe: 1
         }
     }
     
     var recapText: String {
         switch self {
         case .drink: "of water drank"
-        case .stand: "of standing up and stretching"
+        case .stand: "of standing up"
         case .walk: "walked"
-        case .breath: "of breathing exercise"
+        case .breathe: "of breathing exercise"
         }
     }
     
@@ -54,9 +63,18 @@ enum HealthCategory: Identifiable, CaseIterable, Hashable, Codable {
         case .drink: 300
         case .stand: 60
         case .walk: 20
-        case .breath: 10
+        case .breathe: 10
         }
     }
     
-    static var allCategories: [HealthCategory] = [.drink, .stand, .walk, .breath]
+    var achievementDescription: String {
+        switch self {
+        case .drink: "Acquire the total of {value} L of water drank"
+        case .stand: "Acquire the total of {value} seconds of standing"
+        case .walk: "Acquire the total of {value} steps of walking"
+        case .breathe: "Acquire the total of {value} seconds of breathing exercise"
+        }
+    }
+    
+    static var allCategories: [HealthCategory] = [.drink, .stand, .walk, .breathe]
 }

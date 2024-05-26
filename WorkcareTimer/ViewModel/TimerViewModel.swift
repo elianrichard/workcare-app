@@ -54,7 +54,8 @@ import UserNotifications
         self.currentFlowIndex = newIndex
     }
     
-    func initializeFlow () {
+    func initializeFlow (questViewModel: QuestViewModel) {
+        questViewModel.resetQuestCompletion()
         let newIndex = 0
         self.currentFlowIndex = newIndex
         self.currentFlow = WorkFlowValue().workflows[newIndex].type

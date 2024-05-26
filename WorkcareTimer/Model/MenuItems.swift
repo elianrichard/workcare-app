@@ -12,7 +12,6 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
     case home
     case achievement
     case statistic
-    case setting
     
     var id: String {
         switch self {
@@ -22,8 +21,6 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
             "achievement"
         case .statistic:
             "statistic"
-        case .setting:
-            "setting"
         }
     }
     
@@ -35,8 +32,6 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
             "Achievements"
         case .statistic:
             "Statistics"
-        case .setting:
-            "Settings"
         }
     }
     
@@ -48,8 +43,6 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
             "trophy.fill"
         case .statistic:
             "chart.bar.fill"
-        case .setting:
-            "gearshape.fill"
         }
     }
     
@@ -60,8 +53,6 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
         case .achievement:
             12
         case .statistic:
-            13
-        case .setting:
             13
         }
     }
@@ -74,13 +65,11 @@ enum MenuItems: Identifiable, CaseIterable, Hashable {
                 .achievementBg
         case .statistic:
                 .statisticBg
-        case .setting:
-                .homeBg
         }
     }
 
     static var allCases: [MenuItems] {
-        [.home, .achievement, .statistic, .setting]
+        [.home, .achievement, .statistic]
     }
 
     //    This == func will override the == operator when handling or comparing TaskSection obj struct,

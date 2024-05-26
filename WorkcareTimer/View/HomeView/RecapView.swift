@@ -20,12 +20,22 @@ struct RecapView: View {
                 .multilineTextAlignment(.leading)
             VStack (alignment: .leading, spacing: 5) {
                 ForEach(HealthCategory.allCategories) { category in
-                    Text("**\(questViewModel.getRecapValue(category)) \(category.questUnit)** \(category.recapText)")
+                    Text("**\(getRecapValue(category)) \(category.questUnit)** \(category.recapText)")
                         .font(.title3)
                 }
             }
         }
         .frame(maxWidth: 250)
+    }
+    
+    func getRecapValue (_ category: HealthCategory) -> String {
+        let value = questViewModel.getRecapValue(category)
+        let divided = Double(value) / Double(category.questUnitDivider)
+        if (category == .drink) {
+            return String(format: "%.1f", divided)
+        } else {
+            return String(format: "%.0f", divided)
+        }
     }
 }
 

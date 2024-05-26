@@ -52,6 +52,14 @@ enum WorkFlowType: Identifiable, CaseIterable, Hashable, Codable {
         }
     }
     
+    var achievementDescription: String {
+        switch self {
+        case .focus: "Acquire the total of {value} flows of focus period"
+        case .short: "Acquire the total of {value} flows of short break period"
+        case .long: "Acquire the total of {value} flows of long break period"
+        }
+    }
+    
     static var flowUnit: String = "flows"
     
     static var allFlows: [WorkFlowType] = [.focus, .short, .long]

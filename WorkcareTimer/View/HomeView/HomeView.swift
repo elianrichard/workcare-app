@@ -29,7 +29,7 @@ struct HomeView: View {
             }
             .frame(maxWidth: 600)
             Spacer()
-            TimerControlView(timerViewModel: timerViewModel)
+            TimerControlView(timerViewModel: timerViewModel, questViewModel: questViewModel)
         }
     }
 }
