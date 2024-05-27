@@ -14,6 +14,7 @@ struct WorkcareTimerApp: App {
             ContentView()
                 .frame(minWidth: 800, idealWidth: 800, maxWidth: .infinity, minHeight: 500, idealHeight: 500, maxHeight: .infinity)
                 .environment(CloudQuestViewModel())
+                .environment(CloudFlowViewModel())
         }
         .windowStyle(.hiddenTitleBar)
     }

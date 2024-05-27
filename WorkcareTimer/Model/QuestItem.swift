@@ -16,7 +16,7 @@ enum QuestRecordKeys: String {
     
     var id: String {
         switch self {
-        case .type: "type"
+        case .type: "QuestType"
         case .category: "category"
         case .dateCompleted: "dateCompleted"
         case .value: "value"

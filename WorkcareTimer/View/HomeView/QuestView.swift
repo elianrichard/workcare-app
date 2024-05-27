@@ -8,24 +8,17 @@
 import SwiftUI
 
 struct QuestView: View {
+    @EnvironmentObject private var cloudQuestViewModel: CloudQuestViewModel
     @ObservedObject var questViewModel: QuestViewModel
     
     var body: some View {
         VStack (spacing: 10) {
             ForEach (HealthCategory.allCategories) { category in
                 Button {
-                    if questViewModel.doneQuests[category] ?? false {
-                        questViewModel.removeQuestItem(QuestModel(category))
-                    } else {
-                        questViewModel.addQuestItem(QuestModel(category))
-//                        Task {
-//                            try await cloudViewModel.addQuest(QuestItem(category: category.id, dateCompleted: Date(), value: category.questValue))
-//                        }
-                    }
                     questViewModel.modifyCompletion(category)
                 } label: {
                     HStack (alignment: .top) {
-                        Image(systemName: questViewModel.doneQuests[category] ?? false ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: questViewModel.doneQuests.containsKey(category.id) ? "checkmark.circle.fill" : "circle")
                         Text(category.questText)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

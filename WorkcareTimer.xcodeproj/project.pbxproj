@@ -48,8 +48,10 @@
 		679057682BF76458005E05EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 679057672BF76458005E05EE /* Assets.xcassets */; };
 		6790576B2BF76458005E05EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6790576A2BF76458005E05EE /* Preview Assets.xcassets */; };
 		67AA85542C018640007FEC90 /* HealthCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA85532C018640007FEC90 /* HealthCategories.swift */; };
-		67AA85562C01E216007FEC90 /* SwiftDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA85552C01E216007FEC90 /* SwiftDataModel.swift */; };
 		67AA855C2C01EFAE007FEC90 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AA855B2C01EFAE007FEC90 /* LayoutView.swift */; };
+		67B4FB692C041E5800138A3E /* FlowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4FB682C041E5800138A3E /* FlowItem.swift */; };
+		67B4FB6B2C041F1300138A3E /* CloudFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4FB6A2C041F1300138A3E /* CloudFlowViewModel.swift */; };
+		67B4FB6D2C04271000138A3E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4FB6C2C04271000138A3E /* Extensions.swift */; };
 		67F102382BFC1E1E00E756E8 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F102372BFC1E1E00E756E8 /* MenuItems.swift */; };
 		67F1023E2BFC24ED00E756E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F1023D2BFC24ED00E756E8 /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -99,8 +101,10 @@
 		6790576A2BF76458005E05EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6790576C2BF76458005E05EE /* WorkcareTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkcareTimer.entitlements; sourceTree = "<group>"; };
 		67AA85532C018640007FEC90 /* HealthCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCategories.swift; sourceTree = "<group>"; };
-		67AA85552C01E216007FEC90 /* SwiftDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataModel.swift; sourceTree = "<group>"; };
 		67AA855B2C01EFAE007FEC90 /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
+		67B4FB682C041E5800138A3E /* FlowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowItem.swift; sourceTree = "<group>"; };
+		67B4FB6A2C041F1300138A3E /* CloudFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFlowViewModel.swift; sourceTree = "<group>"; };
+		67B4FB6C2C04271000138A3E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		67F102372BFC1E1E00E756E8 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		67F1023D2BFC24ED00E756E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +162,7 @@
 				674EC39D2BFD8F0000B033B0 /* QuestViewModel.swift */,
 				6731E29C2C030C7500DFD690 /* UserViewModel.swift */,
 				6731E29E2C03FAF100DFD690 /* CloudQuestViewModel.swift */,
+				67B4FB6A2C041F1300138A3E /* CloudFlowViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				679057632BF76457005E05EE /* WorkcareTimerApp.swift */,
+				67B4FB6C2C04271000138A3E /* Extensions.swift */,
 				671414452BFC13FC00EC3A57 /* Info.plist */,
 				6714142F2BFC11CE00EC3A57 /* Shared */,
 				671414B42BFC19AD00EC3A57 /* ViewModel */,
@@ -239,8 +245,8 @@
 				671FDAFF2BFC94CA0047B4A2 /* WorkFlows.swift */,
 				67AA85532C018640007FEC90 /* HealthCategories.swift */,
 				671ED88B2C02C449009C0FB4 /* AchievementItems.swift */,
-				67AA85552C01E216007FEC90 /* SwiftDataModel.swift */,
 				6731E2A02C03FB2C00DFD690 /* QuestItem.swift */,
+				67B4FB682C041E5800138A3E /* FlowItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,8 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B4FB692C041E5800138A3E /* FlowItem.swift in Sources */,
 				67F1023E2BFC24ED00E756E8 /* HomeView.swift in Sources */,
 				671FDAFE2BFC92A90047B4A2 /* TimerViewModel.swift in Sources */,
+				67B4FB6B2C041F1300138A3E /* CloudFlowViewModel.swift in Sources */,
 				671FDAF82BFC80050047B4A2 /* TimerClockView.swift in Sources */,
 				679057662BF76457005E05EE /* ContentView.swift in Sources */,
 				6714D0B62C017558001A8631 /* RecapView.swift in Sources */,
@@ -361,7 +369,6 @@
 				671FDB052BFCA3880047B4A2 /* TimerCheckpointView.swift in Sources */,
 				671FDB002BFC94CA0047B4A2 /* WorkFlows.swift in Sources */,
 				674EC39E2BFD8F0000B033B0 /* QuestViewModel.swift in Sources */,
-				67AA85562C01E216007FEC90 /* SwiftDataModel.swift in Sources */,
 				67AA85542C018640007FEC90 /* HealthCategories.swift in Sources */,
 				671ED88C2C02C449009C0FB4 /* AchievementItems.swift in Sources */,
 				678B6CCB2BFDE58000E1D47B /* StatisticView.swift in Sources */,
@@ -371,6 +378,7 @@
 				679057642BF76457005E05EE /* WorkcareTimerApp.swift in Sources */,
 				678B6CC82BFDE53A00E1D47B /* AchievementView.swift in Sources */,
 				671FDB032BFCA0210047B4A2 /* TimerControlView.swift in Sources */,
+				67B4FB6D2C04271000138A3E /* Extensions.swift in Sources */,
 				678B6CD12BFDE84A00E1D47B /* OnboardingView.swift in Sources */,
 				67376AD42BFD7D3A00BE17D6 /* QuestView.swift in Sources */,
 				6731E29D2C030C7500DFD690 /* UserViewModel.swift in Sources */,

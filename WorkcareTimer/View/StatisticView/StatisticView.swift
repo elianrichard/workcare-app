@@ -8,19 +8,27 @@
 import SwiftUI
 
 struct StatisticView: View {
-    @ObservedObject var timerViewModel: TimerViewModel
-    @ObservedObject var questViewModel: QuestViewModel
+    @EnvironmentObject private var cloudQuestViewModel: CloudQuestViewModel
+    @EnvironmentObject private var cloudFlowViewModel: CloudFlowViewModel
     @Binding var selection: MenuItems
     
-    var questsSum: [HealthCategory: Int] {
-        return questViewModel.questStorage.reduce(into: [:]) { counts, element in
-            counts[element.questCategory, default: 0] += 1
+    private var quests: [QuestItem] {
+        cloudQuestViewModel.quests
+    }
+    
+    private var flows: [FlowItem] {
+        cloudFlowViewModel.flows
+    }
+    
+    var questsSum: [String: Int] {
+        return quests.reduce(into: [:]) { counts, element in
+            counts[element.category, default: 0] += 1
         }
     }
     
-    var flowSum: [WorkFlowType: Int] {
-        return timerViewModel.flowStorage.reduce(into: [:]) { counts, element in
-            counts[element.workflow, default: 0] += 1
+    var flowSum: [String: Int] {
+        return flows.reduce(into: [:]) { counts, element in
+            counts[element.category, default: 0] += 1
         }
     }
     
@@ -35,7 +43,7 @@ struct StatisticView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     VStack (spacing: 8) {
-                        Text("\(timerViewModel.flowStorage.count) ")
+                        Text("\(flows.count) ")
                             .font(.title)
                             .fontWeight(.bold)
                         + Text(WorkFlowType.flowUnit)
@@ -46,7 +54,7 @@ struct StatisticView: View {
                     }
                     ForEach (WorkFlowType.allFlows) { flow in
                         VStack (spacing: 8) {
-                            Text("\(flowSum[flow] ?? 0) ")
+                            Text("\(flowSum[flow.id] ?? 0) ")
                                 .font(.title)
                                 .fontWeight(.bold)
                             + Text(WorkFlowType.flowUnit)
@@ -75,8 +83,10 @@ struct StatisticView: View {
             .foregroundColor(.white)
             
             Button {
-                timerViewModel.resetFlowStorage()
-                questViewModel.resetQuestStorage()
+                Task {
+                    try await cloudQuestViewModel.resetQuest()
+                    try await cloudFlowViewModel.resetFlow()
+                }
             } label: {
                 HStack (spacing: 4) {
                     Image(systemName: "arrow.circlepath")
@@ -90,10 +100,18 @@ struct StatisticView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(maxWidth: .infinity, alignment: .trailing)
         }
+        .task {
+            do {
+                try await cloudQuestViewModel.populateQuests()
+                try await cloudFlowViewModel.populateFlows()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func getHealthCategoryValue (_ category: HealthCategory) -> String {
-        let value =  Double(questsSum[category] ?? 0) * Double(category.questValue)
+        let value =  Double(questsSum[category.id] ?? 0) * Double(category.questValue)
         if category.questUnitDivider != 1 {
             let unitConversion = value / Double(category.questUnitDivider)
             return String(format: "%.1f", unitConversion)
@@ -104,6 +122,6 @@ struct StatisticView: View {
 }
 
 #Preview {
-    StatisticView(timerViewModel: TimerViewModel(), questViewModel: QuestViewModel(), selection: .constant(.statistic))
+    StatisticView(selection: .constant(.statistic))
         .frame(maxWidth: 800, maxHeight: 500)
 }

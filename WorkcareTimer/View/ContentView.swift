@@ -19,13 +19,10 @@ struct ContentView: View {
             switch selection {
             case .home:
                 HomeView(timerViewModel: timerViewModel, questViewModel: questViewModel, selection: $selection)
-                    .onAppear {
-                        print(userViewModel.userId, userViewModel.firstName, userViewModel.email, userViewModel.lastName)
-                    }
             case .achievement:
-                AchievementView(timerViewModel: timerViewModel, questViewModel: questViewModel, selection: $selection)
+                AchievementView(selection: $selection)
             case .statistic:
-                StatisticView(timerViewModel: timerViewModel, questViewModel: questViewModel, selection: $selection)
+                StatisticView(selection: $selection)
             }
         } else {
             OnboardingView(userViewModel: userViewModel)

@@ -9,24 +9,28 @@ import SwiftUI
 import SwiftData
 
 struct AchievementView: View {
-    
-    @ObservedObject var timerViewModel: TimerViewModel
-    @ObservedObject var questViewModel: QuestViewModel
+    @EnvironmentObject private var cloudQuestViewModel: CloudQuestViewModel
+    @EnvironmentObject private var cloudFlowViewModel: CloudFlowViewModel
     @Binding var selection: MenuItems
     
+    private var quests: [QuestItem] {
+        cloudQuestViewModel.quests
+    }
+    private var flows: [FlowItem] {
+        cloudFlowViewModel.flows
+    }
+    var questsSum: [String: Int] {
+        return quests.reduce(into: [:]) { counts, element in
+            counts[element.category, default: 0] += 1
+        }
+    }
+    var flowSum: [String: Int] {
+        return flows.reduce(into: [:]) { counts, element in
+            counts[element.category, default: 0] += 1
+        }
+    }
+    
     var achievementList = AchievementList()
-    
-    var questsSum: [HealthCategory: Int] {
-        return questViewModel.questStorage.reduce(into: [:]) { counts, element in
-            counts[element.questCategory, default: 0] += 1
-        }
-    }
-    
-    var flowSum: [WorkFlowType: Int] {
-        return timerViewModel.flowStorage.reduce(into: [:]) { counts, element in
-            counts[element.workflow, default: 0] += 1
-        }
-    }
     
     let columns = [
         GridItem(.flexible()),
@@ -62,6 +66,14 @@ struct AchievementView: View {
             }
             .frame(maxWidth: .infinity)
         }
+        .task {
+            do {
+                try await cloudQuestViewModel.populateQuests()
+                try await cloudFlowViewModel.populateFlows()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func getAchievementText (_ item: AchievementItem) -> String {
@@ -79,12 +91,12 @@ struct AchievementView: View {
             item.category.mainCategory == .flow
         ) {
             if (item.category.categoryId == "allFlow") {
-                let achievedValue = timerViewModel.flowStorage.count
+                let achievedValue = flows.count
                 return achievedValue >= item.value
             } else {
                 for type in WorkFlowType.allCases {
                     if (type.id == item.category.categoryId) {
-                        let achievedValue = flowSum[type] ?? 0
+                        let achievedValue = flowSum[type.id] ?? 0
                         return achievedValue >= item.value
                     }
                 }
@@ -93,7 +105,7 @@ struct AchievementView: View {
         } else {
             for type in HealthCategory.allCases {
                 if (type.id == item.category.categoryId) {
-                    let achievedValue = questsSum[type] ?? 0
+                    let achievedValue = questsSum[type.id] ?? 0
                     return achievedValue * type.questValue >= item.value
                 }
             }
@@ -113,6 +125,6 @@ struct AchievementView: View {
 }
 
 #Preview {
-    AchievementView(timerViewModel: TimerViewModel(), questViewModel: QuestViewModel(), selection: .constant(.achievement))
+    AchievementView(selection: .constant(.achievement))
         .frame(maxWidth: 800, maxHeight: 500)
 }

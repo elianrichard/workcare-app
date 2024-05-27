@@ -10,7 +10,7 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.com.elian.Workcare</string>
+		<string>iCloud.com.elian.WorkcareApp</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>

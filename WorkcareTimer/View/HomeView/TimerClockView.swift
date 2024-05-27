@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TimerClockView: View {
+    @EnvironmentObject private var cloudFlowViewModel: CloudFlowViewModel
+    @EnvironmentObject private var cloudQuestViewModel: CloudQuestViewModel
     
     @ObservedObject var timerViewModel: TimerViewModel
     @ObservedObject var questViewModel: QuestViewModel
@@ -26,7 +28,15 @@ struct TimerClockView: View {
                 if timerViewModel.timeRemaining > 0 {
                     timerViewModel.timeRemaining -= 1
                 } else {
-                    timerViewModel.addFlowItem(FlowModel(timerViewModel.currentFlow))
+                    let currentFlow = timerViewModel.currentFlow.id
+                    Task {
+                        try await cloudFlowViewModel.addFlow(FlowItem(category: currentFlow, dateCompleted: Date()))
+                        for category in HealthCategory.allCases {
+                            if let newItem = questViewModel.doneQuests[category.id] {
+                                try await cloudQuestViewModel.addQuest(newItem)
+                            }
+                        }
+                    }
                     timerViewModel.startNextFlow(questViewModel: questViewModel)
                 }
             }

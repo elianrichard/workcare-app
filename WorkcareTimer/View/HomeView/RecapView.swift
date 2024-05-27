@@ -29,7 +29,7 @@ struct RecapView: View {
     }
     
     func getRecapValue (_ category: HealthCategory) -> String {
-        let value = questViewModel.getRecapValue(category)
+        let value = questViewModel.totalLifetimeCompletion[category] ?? 0
         let divided = Double(value) / Double(category.questUnitDivider)
         if (category == .drink) {
             return String(format: "%.1f", divided)

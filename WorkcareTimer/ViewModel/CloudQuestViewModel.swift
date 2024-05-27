@@ -10,7 +10,7 @@ import CloudKit
 
 // AGGREGATE MODEL
 @Observable class CloudQuestViewModel: ObservableObject {
-    private var db = CKContainer.default().privateCloudDatabase
+    private var db = CKContainer(identifier: "iCloud.com.elian.WorkcareApp").privateCloudDatabase
     private var questsDictionary: [CKRecord.ID: QuestItem] = [:]
     
     var quests: [QuestItem] {
@@ -27,18 +27,25 @@ import CloudKit
         }
     }
     
-    func deleteQuest(_ questItem: QuestItem) async throws {
-        questsDictionary.removeValue(forKey: questItem.recordId!)
-        
+    func resetQuest() async throws {
+        questsDictionary = [:]
         do {
-            let _ = try await db.deleteRecord(withID: questItem.recordId!)
+            let query = CKQuery(recordType: QuestRecordKeys.type.id, predicate: NSPredicate(value: true))
+            query.sortDescriptors = [NSSortDescriptor(key: QuestRecordKeys.dateCompleted.id, ascending: false)]
+            let result = try await db.records(matching: query)
+            let records = result.matchResults.compactMap { try? $0.1.get() }
+            
+            records.forEach { record in
+                Task {
+                    try await db.deleteRecord(withID: record.recordID)
+                }
+            }
         } catch {
-            questsDictionary[questItem.recordId!] = questItem
             print(error)
         }
     }
     
-    func populateTasks() async throws {
+    func populateQuests() async throws {
         do {
             let query = CKQuery(recordType: QuestRecordKeys.type.id, predicate: NSPredicate(value: true))
             query.sortDescriptors = [NSSortDescriptor(key: QuestRecordKeys.dateCompleted.id, ascending: false)]
