@@ -11,21 +11,24 @@ import UserNotifications
 struct ContentView: View {
     @StateObject var timerViewModel = TimerViewModel()
     @StateObject var questViewModel = QuestViewModel()
-    @State public var isOnboardingDone = false
+    @StateObject var userViewModel = UserViewModel()
     @State public var selection = MenuItems.home
     
     var body: some View {
-        if (isOnboardingDone) {
+        if (userViewModel.isLoggedIn) {
             switch selection {
             case .home:
                 HomeView(timerViewModel: timerViewModel, questViewModel: questViewModel, selection: $selection)
+                    .onAppear {
+                        print(userViewModel.userId, userViewModel.firstName, userViewModel.email, userViewModel.lastName)
+                    }
             case .achievement:
-                AchievementView(selection: $selection)
+                AchievementView(timerViewModel: timerViewModel, questViewModel: questViewModel, selection: $selection)
             case .statistic:
-                StatisticView(selection: $selection)
+                StatisticView(timerViewModel: timerViewModel, questViewModel: questViewModel, selection: $selection)
             }
         } else {
-            OnboardingView(isOnboardingDone: $isOnboardingDone)
+            OnboardingView(userViewModel: userViewModel)
         }
     }
 }

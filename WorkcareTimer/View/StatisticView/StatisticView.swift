@@ -6,24 +6,20 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct StatisticView: View {
-    @Environment(\.modelContext) var modelContext
-    
+    @ObservedObject var timerViewModel: TimerViewModel
+    @ObservedObject var questViewModel: QuestViewModel
     @Binding var selection: MenuItems
     
-    @Query private var allCompletedQuest: [QuestModel]
-    @Query private var allCompletedFlow: [FlowModel]
-    
     var questsSum: [HealthCategory: Int] {
-        return allCompletedQuest.reduce(into: [:]) { counts, element in
+        return questViewModel.questStorage.reduce(into: [:]) { counts, element in
             counts[element.questCategory, default: 0] += 1
         }
     }
     
     var flowSum: [WorkFlowType: Int] {
-        return allCompletedFlow.reduce(into: [:]) { counts, element in
+        return timerViewModel.flowStorage.reduce(into: [:]) { counts, element in
             counts[element.workflow, default: 0] += 1
         }
     }
@@ -34,16 +30,12 @@ struct StatisticView: View {
         GridItem(.flexible()),
     ]
     
-    init(selection: Binding<MenuItems>) {
-        self._selection = selection
-    }
-    
     var body: some View {
         LayoutView (selection: $selection) {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     VStack (spacing: 8) {
-                        Text("\(allCompletedFlow.count) ")
+                        Text("\(timerViewModel.flowStorage.count) ")
                             .font(.title)
                             .fontWeight(.bold)
                         + Text(WorkFlowType.flowUnit)
@@ -83,12 +75,8 @@ struct StatisticView: View {
             .foregroundColor(.white)
             
             Button {
-                for quest in allCompletedQuest {
-                    modelContext.delete(quest)
-                }
-                for flow in allCompletedFlow {
-                    modelContext.delete(flow)
-                }
+                timerViewModel.resetFlowStorage()
+                questViewModel.resetQuestStorage()
             } label: {
                 HStack (spacing: 4) {
                     Image(systemName: "arrow.circlepath")
@@ -116,6 +104,6 @@ struct StatisticView: View {
 }
 
 #Preview {
-    StatisticView(selection: .constant(.statistic))
+    StatisticView(timerViewModel: TimerViewModel(), questViewModel: QuestViewModel(), selection: .constant(.statistic))
         .frame(maxWidth: 800, maxHeight: 500)
 }

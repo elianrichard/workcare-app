@@ -34,6 +34,9 @@
 		671FDB002BFC94CA0047B4A2 /* WorkFlows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDAFF2BFC94CA0047B4A2 /* WorkFlows.swift */; };
 		671FDB032BFCA0210047B4A2 /* TimerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDB022BFCA0210047B4A2 /* TimerControlView.swift */; };
 		671FDB052BFCA3880047B4A2 /* TimerCheckpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671FDB042BFCA3880047B4A2 /* TimerCheckpointView.swift */; };
+		6731E29D2C030C7500DFD690 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6731E29C2C030C7500DFD690 /* UserViewModel.swift */; };
+		6731E29F2C03FAF100DFD690 /* CloudQuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6731E29E2C03FAF100DFD690 /* CloudQuestViewModel.swift */; };
+		6731E2A12C03FB2C00DFD690 /* QuestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6731E2A02C03FB2C00DFD690 /* QuestItem.swift */; };
 		67376AD42BFD7D3A00BE17D6 /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67376AD32BFD7D3A00BE17D6 /* QuestView.swift */; };
 		674EC39E2BFD8F0000B033B0 /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EC39D2BFD8F0000B033B0 /* QuestViewModel.swift */; };
 		674EC3A02BFDD86500B033B0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EC39F2BFDD86500B033B0 /* HeaderView.swift */; };
@@ -80,6 +83,9 @@
 		671FDAFF2BFC94CA0047B4A2 /* WorkFlows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkFlows.swift; sourceTree = "<group>"; };
 		671FDB022BFCA0210047B4A2 /* TimerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControlView.swift; sourceTree = "<group>"; };
 		671FDB042BFCA3880047B4A2 /* TimerCheckpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCheckpointView.swift; sourceTree = "<group>"; };
+		6731E29C2C030C7500DFD690 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		6731E29E2C03FAF100DFD690 /* CloudQuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudQuestViewModel.swift; sourceTree = "<group>"; };
+		6731E2A02C03FB2C00DFD690 /* QuestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestItem.swift; sourceTree = "<group>"; };
 		67376AD32BFD7D3A00BE17D6 /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
 		674EC39D2BFD8F0000B033B0 /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
 		674EC39F2BFDD86500B033B0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 			children = (
 				671FDAFD2BFC92A90047B4A2 /* TimerViewModel.swift */,
 				674EC39D2BFD8F0000B033B0 /* QuestViewModel.swift */,
+				6731E29C2C030C7500DFD690 /* UserViewModel.swift */,
+				6731E29E2C03FAF100DFD690 /* CloudQuestViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 				67AA85532C018640007FEC90 /* HealthCategories.swift */,
 				671ED88B2C02C449009C0FB4 /* AchievementItems.swift */,
 				67AA85552C01E216007FEC90 /* SwiftDataModel.swift */,
+				6731E2A02C03FB2C00DFD690 /* QuestItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,11 +366,14 @@
 				671ED88C2C02C449009C0FB4 /* AchievementItems.swift in Sources */,
 				678B6CCB2BFDE58000E1D47B /* StatisticView.swift in Sources */,
 				67F102382BFC1E1E00E756E8 /* MenuItems.swift in Sources */,
+				6731E29F2C03FAF100DFD690 /* CloudQuestViewModel.swift in Sources */,
+				6731E2A12C03FB2C00DFD690 /* QuestItem.swift in Sources */,
 				679057642BF76457005E05EE /* WorkcareTimerApp.swift in Sources */,
 				678B6CC82BFDE53A00E1D47B /* AchievementView.swift in Sources */,
 				671FDB032BFCA0210047B4A2 /* TimerControlView.swift in Sources */,
 				678B6CD12BFDE84A00E1D47B /* OnboardingView.swift in Sources */,
 				67376AD42BFD7D3A00BE17D6 /* QuestView.swift in Sources */,
+				6731E29D2C030C7500DFD690 /* UserViewModel.swift in Sources */,
 				674EC3A02BFDD86500B033B0 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +525,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				USER = "";
 			};
 			name = Debug;
 		};
@@ -542,6 +555,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				USER = "";
 			};
 			name = Release;
 		};

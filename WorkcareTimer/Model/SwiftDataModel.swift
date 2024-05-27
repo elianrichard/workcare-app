@@ -6,10 +6,8 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-class QuestModel: Identifiable {
+struct QuestModel: Identifiable {
     var id: UUID
     var questCategory: HealthCategory
     
@@ -19,8 +17,7 @@ class QuestModel: Identifiable {
     }
 }
 
-@Model
-class FlowModel {
+struct FlowModel: Identifiable {
     var id: UUID
     var workflow: WorkFlowType
     

@@ -6,24 +6,21 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct QuestView: View {
-    @Environment(\.modelContext) private var context
-    
     @ObservedObject var questViewModel: QuestViewModel
-    
-    @Query var questsCompletion: [QuestModel]
     
     var body: some View {
         VStack (spacing: 10) {
             ForEach (HealthCategory.allCategories) { category in
                 Button {
                     if questViewModel.doneQuests[category] ?? false {
-                        let item = questsCompletion.filter { $0.questCategory == category }.last ?? QuestModel(.drink)
-                        context.delete(item)
+                        questViewModel.removeQuestItem(QuestModel(category))
                     } else {
-                        context.insert(QuestModel(category))
+                        questViewModel.addQuestItem(QuestModel(category))
+//                        Task {
+//                            try await cloudViewModel.addQuest(QuestItem(category: category.id, dateCompleted: Date(), value: category.questValue))
+//                        }
                     }
                     questViewModel.modifyCompletion(category)
                 } label: {

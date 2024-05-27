@@ -9,23 +9,21 @@ import SwiftUI
 import SwiftData
 
 struct AchievementView: View {
-    @Environment(\.modelContext) var modelContext
     
+    @ObservedObject var timerViewModel: TimerViewModel
+    @ObservedObject var questViewModel: QuestViewModel
     @Binding var selection: MenuItems
     
     var achievementList = AchievementList()
     
-    @Query private var allCompletedQuest: [QuestModel]
-    @Query private var allCompletedFlow: [FlowModel]
-    
     var questsSum: [HealthCategory: Int] {
-        return allCompletedQuest.reduce(into: [:]) { counts, element in
+        return questViewModel.questStorage.reduce(into: [:]) { counts, element in
             counts[element.questCategory, default: 0] += 1
         }
     }
     
     var flowSum: [WorkFlowType: Int] {
-        return allCompletedFlow.reduce(into: [:]) { counts, element in
+        return timerViewModel.flowStorage.reduce(into: [:]) { counts, element in
             counts[element.workflow, default: 0] += 1
         }
     }
@@ -81,7 +79,7 @@ struct AchievementView: View {
             item.category.mainCategory == .flow
         ) {
             if (item.category.categoryId == "allFlow") {
-                let achievedValue = allCompletedFlow.count
+                let achievedValue = timerViewModel.flowStorage.count
                 return achievedValue >= item.value
             } else {
                 for type in WorkFlowType.allCases {
@@ -115,6 +113,6 @@ struct AchievementView: View {
 }
 
 #Preview {
-    AchievementView(selection: .constant(.achievement))
+    AchievementView(timerViewModel: TimerViewModel(), questViewModel: QuestViewModel(), selection: .constant(.achievement))
         .frame(maxWidth: 800, maxHeight: 500)
 }

@@ -9,6 +9,7 @@ import SwiftUI
 import UserNotifications
 
 @Observable class TimerViewModel: ObservableObject {
+    var flowStorage: [FlowModel] = []
     var timeRemaining: Int = 0
     var currentFlowIndex: Int = 0
     var currentFlow: WorkFlowType
@@ -109,5 +110,13 @@ import UserNotifications
         
         // add our notification request
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func addFlowItem (_ flow: FlowModel) {
+        flowStorage.append(flow)
+    }
+    
+    func resetFlowStorage () {
+        flowStorage = []
     }
 }
